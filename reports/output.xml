@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.8.10 on linux)" generated="2024-06-17T16:32:16.034878" rpa="false" schemaversion="5">
+<suite id="s1" name="Signup" source="/home/usuario/Projetos/walkdog-robot/signup.robot">
+<test id="s1-t1" name="Deve poder cadastrar um novo dog walker" line="6">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-17T16:32:16.508457" level="INFO">${dog_walker} = {'name': 'Michele Rodrigues', 'cpf': '84739926016', 'email': 'feheta4967@morxin.com', 'cep': '40254-260', 'Street': 'Vila São Damião', 'District': 'Cosme de Farias', 'City_uf': 'Salvador/BA', 'Number'...</msg>
+<var>${dog_walker}</var>
+<arg>name=Michele Rodrigues</arg>
+<arg>cpf=84739926016</arg>
+<arg>email=feheta4967@morxin.com</arg>
+<arg>cep=40254-260</arg>
+<arg>Street=Vila São Damião</arg>
+<arg>District=Cosme de Farias</arg>
+<arg>City_uf=Salvador/BA</arg>
+<arg>Number=1</arg>
+<arg>Details=Apto 10</arg>
+<arg>cnh=torreto.jpg</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-17T16:32:16.507696" elapsed="0.000835"/>
+</kw>
+<kw name="Go to signup page">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-06-17T16:32:16.510664" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/home/usuario/Projetos/walkdog-robot/reports/browser/traces/246f8ddb-8c19-4ee8-94f1-6e420a4e0b22"}</msg>
+<msg time="2024-06-17T16:32:17.067919" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/home/usuario/Projetos/walkdog-robot/reports/browser/traces/246f8ddb-8c19-4ee8-94f1-6e420a4e0b22"}</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-06-17T16:32:16.509583" elapsed="0.558567"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-06-17T16:32:18.393883" level="INFO">Successfully initialized new page object and opened url: https://walkdog.vercel.app/signup</msg>
+<msg time="2024-06-17T16:32:18.394254" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://walkdog.vercel.app/signup</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-06-17T16:32:17.068488" elapsed="1.326535"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-06-17T16:32:18.492663" level="INFO">Waited for Element with selector form h1 at state visible</msg>
+<arg>form h1</arg>
+<arg>visible</arg>
+<arg>2000</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-06-17T16:32:18.396268" elapsed="0.096659"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-06-17T16:32:18.547236" level="INFO">Text: 'Faça seu cadastro'</msg>
+<arg>form h1</arg>
+<arg>equal</arg>
+<arg>Faça seu cadastro</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-06-17T16:32:18.493680" elapsed="0.053748"/>
+</kw>
+<status status="PASS" start="2024-06-17T16:32:16.509067" elapsed="2.038627"/>
+</kw>
+<kw name="Fill signup form">
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-06-17T16:32:18.549749" level="INFO">Fills the text 'Michele Rodrigues' in the given field.</msg>
+<arg>css=input[name=name]</arg>
+<arg>${dog_walker}[name]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-06-17T16:32:18.548843" elapsed="0.037169"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-06-17T16:32:18.587034" level="INFO">Fills the text 'feheta4967@morxin.com' in the given field.</msg>
+<arg>css=input[name=email]</arg>
+<arg>${dog_walker}[email]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-06-17T16:32:18.586334" elapsed="0.019322"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-06-17T16:32:18.606813" level="INFO">Fills the text '84739926016' in the given field.</msg>
+<arg>css=input[name=cpf]</arg>
+<arg>${dog_walker}[cpf]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-06-17T16:32:18.606054" elapsed="0.017556"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-06-17T16:32:18.625044" level="INFO">Fills the text '40254-260' in the given field.</msg>
+<arg>css=input[name=cep]</arg>
+<arg>${dog_walker}[cep]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-06-17T16:32:18.624037" elapsed="0.038980"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-06-17T16:32:18.664234" level="INFO">Clicks the element 'css=input[value="Buscar CEP"]'.</msg>
+<arg>css=input[value="Buscar CEP"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-06-17T16:32:18.663459" elapsed="0.061362"/>
+</kw>
+<kw name="Get Property" owner="Browser">
+<msg time="2024-06-17T16:32:19.531267" level="INFO">Property: 'Vila São Damião'</msg>
+<arg>css=input[name="addressStreet"]</arg>
+<arg>value</arg>
+<arg>equal</arg>
+<arg>${dog_walker}[Street]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the ``property`` of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-06-17T16:32:18.725315" elapsed="0.806209"/>
+</kw>
+<kw name="Get Property" owner="Browser">
+<msg time="2024-06-17T16:32:19.548570" level="INFO">Property: 'Cosme de Farias'</msg>
+<arg>css=input[name="addressDistrict"]</arg>
+<arg>value</arg>
+<arg>equal</arg>
+<arg>${dog_walker}[District]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the ``property`` of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-06-17T16:32:19.531945" elapsed="0.016837"/>
+</kw>
+<kw name="Get Property" owner="Browser">
+<msg time="2024-06-17T16:32:19.565109" level="INFO">Property: 'Salvador/BA'</msg>
+<arg>css=input[name="addressCityUf"]</arg>
+<arg>value</arg>
+<arg>equal</arg>
+<arg>${dog_walker}[City_uf]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the ``property`` of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-06-17T16:32:19.549185" elapsed="0.016144"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-06-17T16:32:19.566579" level="INFO">Fills the text '1' in the given field.</msg>
+<arg>css=input[name=addressNumber]</arg>
+<arg>${dog_walker}[Number]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-06-17T16:32:19.565714" elapsed="0.022080"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-06-17T16:32:19.589850" level="INFO">Fills the text 'Apto 10' in the given field.</msg>
+<arg>css=input[name=addressDetails]</arg>
+<arg>${dog_walker}[Details]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-06-17T16:32:19.588281" elapsed="0.020829"/>
+</kw>
+<kw name="Upload File By Selector" owner="Browser">
+<msg time="2024-06-17T16:32:19.610981" level="FAIL">ValueError: Nonexistent input file path '/home/usuario/Projetos/walkdog-robot/{'name': 'Michele Rodrigues', 'cpf': '84739926016', 'email': 'feheta4967@morxin.com', 'cep': '40254-260', 'Street': 'Vila São Damião', 'District': 'Cosme de Farias', 'City_uf': 'Salvador/BA', 'Number': '1', 'Details': 'Apto 10', 'cnh': 'torreto.jpg'}'</msg>
+<arg>css=input[type="File"]</arg>
+<arg>${EXECDIR}/${dog_walker}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Uploads file from `path` to file input element matched by selector.</doc>
+<status status="FAIL" start="2024-06-17T16:32:19.609495" elapsed="0.002912">ValueError: Nonexistent input file path '/home/usuario/Projetos/walkdog-robot/{'name': 'Michele Rodrigues', 'cpf': '84739926016', 'email': 'feheta4967@morxin.com', 'cep': '40254-260', 'Street': 'Vila São Damião', 'District': 'Cosme de Farias', 'City_uf': 'Salvador/BA', 'Number': '1', 'Details': 'Apto 10', 'cnh': 'torreto.jpg'}'</status>
+</kw>
+<arg>${dog_walker}</arg>
+<status status="FAIL" start="2024-06-17T16:32:18.548204" elapsed="1.064573">ValueError: Nonexistent input file path '/home/usuario/Projetos/walkdog-robot/{'name': 'Michele Rodrigues', 'cpf': '84739926016', 'email': 'feheta4967@morxin.com', 'cep': '40254-260', 'Street': 'Vila São Damião', 'District': 'Cosme de Farias', 'City_uf': 'Salvador/BA', 'Number': '1', 'Details': 'Apto 10', 'cnh': 'torreto.jpg'}'</status>
+</kw>
+<kw name="submit signup form">
+<status status="NOT RUN" start="2024-06-17T16:32:19.613294" elapsed="0.000098"/>
+</kw>
+<kw name="popup should be">
+<arg>Recebemos o seu cadastro e em breve retornaremos o contato.</arg>
+<status status="NOT RUN" start="2024-06-17T16:32:19.613743" elapsed="0.000074"/>
+</kw>
+<status status="FAIL" start="2024-06-17T16:32:16.502502" elapsed="3.111818">ValueError: Nonexistent input file path '/home/usuario/Projetos/walkdog-robot/{'name': 'Michele Rodrigues', 'cpf': '84739926016', 'email': 'feheta4967@morxin.com', 'cep': '40254-260', 'Street': 'Vila São Damião', 'District': 'Cosme de Farias', 'City_uf': 'Salvador/BA', 'Number': '1', 'Details': 'Apto 10', 'cnh': 'torreto.jpg'}'</status>
+</test>
+<doc>Suite de testes de cadastro de dog walker</doc>
+<status status="FAIL" start="2024-06-17T16:32:16.035737" elapsed="3.672019"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Signup">Signup</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
